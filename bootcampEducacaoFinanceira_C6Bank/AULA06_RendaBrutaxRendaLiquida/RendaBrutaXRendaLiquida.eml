@@ -1,0 +1,206 @@
+Delivered-To: lucas.arifa100@gmail.com
+Received: by 2002:ac0:e352:0:0:0:0:0 with SMTP id g18csp70869imn;
+        Tue, 15 Sep 2020 15:28:32 -0700 (PDT)
+X-Received: by 2002:a25:db10:: with SMTP id g16mr30012355ybf.501.1600208912762;
+        Tue, 15 Sep 2020 15:28:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1600208912; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZoWZ+XDdZK9XDEA30i/UDdIk54O4Yw3n98mRRsZ9KOJ8jytEbrYCXRZP5v5/vPkvhr
+         AaqIDpTutPG8wiqMJLQ3VuBlmjxLnPsQNxNmJ4dpPdK5L4/EUKQv94PySIjVG1u/TLtR
+         woN9w12Xw04HXYudCGWTjaKc52n28EoJ1B2EZZtFck+xcYaUHiCSAjfakea/hhhk0YYv
+         6ekOj3jXwuNcGmT4O2VKHSjaCUX5GurOjMYuhs0Tj01RGT/GC1EF/UT5BoMYhIqXD3UJ
+         NsHJOsmrHLRnj5x97mVcfbq23yB3PXphbao1pWJkfkv3/M80r9YtJW4K0VV4RoX8iMCZ
+         WPzA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:mime-version:dkim-signature;
+        bh=7OKS+pIQoEakfJtd8EaZgSTyQkRSspQAna33Kg7mhlg=;
+        b=aW46wXNBO+f+S65jCcdYKABiSVqjgbv1NiB1vk4Zcf0aiIakYcLf7kogsSq3OIGMOO
+         Re/Po9topBhbTFpmsyjlSbLXTUPbQOPpB0RoiUOt2M2w0gYbEz2kk5xrUa6qn4ZclFBt
+         u3t9Yu7GObf1XlcKCipuH9ANNUiErnqgpvBm0yzrK/N8seZl+eQgqO3Ok7xPaZTvHjMn
+         jGqSdYULBSGTKz/35Axg2th+0XgawaOslKjBNqyBjQhP8wO4EY+94rHOJvCMDW3P6IZ6
+         L1g6Wg/5NMtXoGzioxmY2fKsw2dh4/0/n+S0Kd2mseZk30TrM+BQ02zHZ1/fRAq/E1iM
+         Mssw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=XZ1QkRXn;
+       spf=pass (google.com: domain of 3eebhxxykabc2be9f-e1z15cgf-abe1c8l3bb381.zb9@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3EEBhXxYKABc2BE9F-E1z15CGF-ABE1C8L3BB381.zB9@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3EEBhXxYKABc2BE9F-E1z15CGF-ABE1C8L3BB381.zB9@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id i196sor4202640yba.204.2020.09.15.15.28.32
+        for <lucas.arifa100@gmail.com>
+        (Google Transport Security);
+        Tue, 15 Sep 2020 15:28:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3eebhxxykabc2be9f-e1z15cgf-abe1c8l3bb381.zb9@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=XZ1QkRXn;
+       spf=pass (google.com: domain of 3eebhxxykabc2be9f-e1z15cgf-abe1c8l3bb381.zb9@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3EEBhXxYKABc2BE9F-E1z15CGF-ABE1C8L3BB381.zB9@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:message-id:date:subject:from:to;
+        bh=7OKS+pIQoEakfJtd8EaZgSTyQkRSspQAna33Kg7mhlg=;
+        b=XZ1QkRXnU1mHSIIYvtHBiF+RxCVo+Xw71XWK+GzNWXWAeKaKFpe5B1cjGpEBN5U8Hl
+         FBUl6fHcXSN8q4mCaarnakXk9rKqFWFXXposIlnWcOCX5d+sV7j6oLFvgXrM4IBLCNGK
+         NktM6daOkRxLGitD70kKIdq3MBV2NiyQBNIHEI/5f1p+pZSVSmij4Ckq2J6Q5GWwn7DO
+         5Bd7xF09egRMUr4LuBnv618BrAkEzduGGVKZSpNbg7HSkchXYJEJ053Pn61LH/F8xtYu
+         iXV+T+fMK7GBz7yCjvK8o1k0SYJcZHj3WJ/rEYXTWpVV0oIorz+zYUgVeMwRzZj1jenE
+         Bu6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:message-id:date:subject:from:to;
+        bh=7OKS+pIQoEakfJtd8EaZgSTyQkRSspQAna33Kg7mhlg=;
+        b=ns5t80Fn2PkmGXEJsWcxVYiASh6F0tCrVAmjPNjqGnRDzEbe+CbKX5zD9N3Gk8361G
+         iMoR4aSzfxfuIMqZv4jWeR1nhG6Te+S7eTFwrv7ZlIZkJrXVvAYIdcz8A4R30t/NC/3L
+         Sk/bP4aDqyPYrtapyTgkSYSfziMxfvZL955G6jt0+tZZrLYDuuOGNUHkfWyKVwU9GEfX
+         3oOr/kDeNjp9jkoh5xOhkbUsD+OmQ2mRVGMf+X78OSylx+qEeoNixw1Co1fB/r+hqXQQ
+         c057gtN2SgaEDTckrE1gYJK6dWmtgMj1Frxc2Ce/gfocA42muFEXehFshnTdb/p+x52N
+         ODIw==
+X-Gm-Message-State: AOAM533QHIBG3/Je41zrxmXE/YV9Cw9h+RJj5Lk9GaM624tf7mTGecpm
+	lWsVacyP5S0AcWXwdnQ+VNIs528ZbeeaNn7muq+Bgw==
+X-Google-Smtp-Source: ABdhPJxTWuHarlYT8Oefvdqq9s+XFS/ddSWtF9LCKhG5bR8b+LGGwi9G1NVa7eop80tzoigM5bMiXB4ktllBBaPk8ifcMw==
+MIME-Version: 1.0
+X-Received: by 2002:a25:cfc3:: with SMTP id f186mr32649548ybg.9.1600208912205;
+ Tue, 15 Sep 2020 15:28:32 -0700 (PDT)
+Message-ID: <000000000000c74b3f05af61abca@google.com>
+Date: Tue, 15 Sep 2020 22:28:32 +0000
+Subject: =?UTF-8?B?UmVuZGEgQnJ1dGEgZSBSZW5kYSBMw61xdWlkYSDwn5Ky?=
+From: Google Forms <forms-receipts-noreply@google.com>
+To: lucas.arifa100@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000c74b3305af61abc7"
+
+--000000000000c74b3305af61abc7
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+R29vZ2xlIEZvcm1zDQoNCg0KVGhhbmtzIGZvciBmaWxsaW5nIG91dCBSZW5kYSBCcnV0YSBlIFJl
+bmRhIEzDrXF1aWRhIPCfkrINCkhlcmUncyB3aGF0IHdlIGdvdCBmcm9tIHlvdToNCg0KDQpSZW5k
+YSBCcnV0YSBlIFJlbmRhIEzDrXF1aWRhIPCfkrINCg0KDQpFbWFpbCBhZGRyZXNzICoNCg0KDQps
+dWNhcy5hcmlmYTEwMEBnbWFpbC5jb20NCg0KDQpOb21lIGNvbXBsZXRvOiAqDQoNCg0KTHVjYXMg
+SGVucmlxdWUgQXJpZmEgU2lsdmENCg0KDQpDZWx1bGFyOiAoREREK07Dum1lcm8pICoNCg0KDQox
+MTkzMjgyNzc0NQ0KDQoNCjEpIFF1YWwgYSByZW5kYSBicnV0YSBkYSBmYW3DrWxpYSBkYSBzdWEg
+aGlzdMOzcmlhPyAqDQoNCg0KMTUuMDAwLjAwDQoNCg0KMikgUXVhbCBhIHJlbmRhIGzDrXF1aWRh
+LCBhcMOzcyBvcyBkZXNjb250b3M/ICoNCg0KDQoxMS4wMDAuMDANCg0KDQozKSBIb3V2ZSBkaWZl
+cmVuw6dhIG5vcyB2YWxvcmVzIHF1ZSB2b2PDqiB0aW5oYSBjYWxjdWxhZG8gYW50ZXMgZG9zICAN
+CmRlc2NvbnRvcywgZSBhcMOzcyBjb250YWJpbGl6w6EtbG9zPyAqDQoNCg0KTsOjbyBob3V2ZSBk
+aWZlcmVuw6dhIGNvbnNpZGVyw6F2ZWwsIHBvaXMgb3MgZGVzY29udG9zIGVyYW0gcHJldmlzdG9z
+Lg0KDQoNCjQpIFNlIHN1YSByZXNwb3N0YSBmb2kgc2ltLCBlc2NyZXZhIHF1YWwgYSBkaWZlcmVu
+w6dhLiAqDQoNCg0KQSBkaWZlcmVuw6dhIGVzdMOhIG5vcyBkZXNjb250b3MgcXVlIGZvcmFtIGZl
+aXRvcyBwcmV2aWFtZW50ZS4NCg0KDQpDcmVhdGUgeW91ciBvd24gR29vZ2xlIEZvcm0NCg0KDQo=
+--000000000000c74b3305af61abc7
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style nonce=3D"NGLF6z7Lzmw2ksy5vHWJfA">@import url(https://fon=
+ts.googleapis.com/css?family=3DGoogle+Sans:400,500|Roboto:300,400,400i,500,=
+700&subset=3Dlatin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-e=
+xt);</style><style nonce=3D"NGLF6z7Lzmw2ksy5vHWJfA">[class=3D"x_body-conten=
+t-wrapper"] * {white-space: normal !important;}</style></head><body dir=3D"=
+ltr" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;text-align: start; wo=
+rd-wrap: break-word; margin: 0; padding: 0; height: 100%; width: 100%;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-co=
+lor:rgb(122,122,122);" width=3D"100%" role=3D"presentation"><tbody><tr heig=
+ht=3D"64px"><td style=3D"padding: 0 24px;"><img alt=3D"Google Forms" height=
+=3D"26px" style=3D"display: inline-block; margin: 0; vertical-align: middle=
+;" width=3D"143px" src=3D"https://www.gstatic.com/docs/forms/google_forms_l=
+ogo_lockup_white_2x.png"></td></tr></tbody></table><div class=3D"body-conte=
+nt-wrapper" style=3D"padding: 12px; background-color: rgb(235,235,235);"><d=
+iv style=3D"margin: 0 auto; max-width: 640px; min-width: 154px;"><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;padding: 20px;"><h1 style=3D"color: =
+#202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-seri=
+f;font-size: 20px; font-weight: 400; line-height: 28px;margin: 0 0 12px;">T=
+hanks for filling out <a href=3D"https://docs.google.com/forms/d/e/1FAIpQLS=
+fGlJwMr-X8vqANAFRWP9uMEfBglV-hlQfGDAR0Elgo8IrTHg/viewform?usp=3Dmail_form_l=
+ink" target=3D"_blank" style=3D"white-space: pre-wrap;">Renda Bruta e Renda=
+ L=C3=ADquida =F0=9F=92=B2</a></h1>Here's what we got from you:</div><div s=
+tyle=3D"border-bottom: 1px solid #dadce0; border-left: 1px solid #dadce0; b=
+order-right: 1px solid #dadce0; border-top: 8px solid rgb(122,122,122); pad=
+ding: 20px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;=
+"><h1 dir=3D"ltr" style=3D"font-family: &#39;Google Sans&#39;,Roboto,Helvet=
+ica,Arial,sans-serif;font-size: 32px; font-weight: 400; line-height: 42px;w=
+hite-space: pre-wrap;margin: 0 0 12px;">Renda Bruta e Renda L=C3=ADquida =
+=F0=9F=92=B2</h1><div style=3D"white-space: pre-wrap;margin-bottom: 12px;">=
+</div></div><form action=3D'' method=3D'GET'><div style=3D"border: 1px soli=
+d #dadce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; m=
+argin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h=
+2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,R=
+oboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-he=
+ight: 24px;white-space: pre-wrap;margin: 0 0 16px;">Email address<span styl=
+e=3D"color: #d93025;" aria-label=3D"Required question"> *</span></h2></div>=
+<div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"aut=
+o" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38=
+);margin: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 10=
+0%; min-width: 50%;">lucas.arifa100@gmail.com</div></div></div></div><div s=
+tyle=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #ff=
+f; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=
+=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family:=
+ &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; f=
+ont-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;"=
+>Nome completo:<span style=3D"color: #d93025;" aria-label=3D"Required quest=
+ion"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"widt=
+h: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1=
+px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: in=
+line-block; max-width: 100%; min-width: 50%;">Lucas Henrique Arifa Silva</d=
+iv></div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px=
+ 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margi=
+n-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"=
+color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sa=
+ns-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: =
+pre-wrap;margin: 0 0 16px;">Celular: (DDD+N=C3=BAmero)<span style=3D"color:=
+ #d93025;" aria-label=3D"Required question"> *</span></h2></div><div style=
+=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=
+=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin=
+: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-=
+width: 50%;">11932827745</div></div></div></div><div style=3D"border: 1px s=
+olid #dadce0; padding: 20px 12px;background-color: #fff; border-radius: 8px=
+; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"=
+><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39=
+;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line=
+-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">1) Qual a renda brut=
+a da fam=C3=ADlia da sua hist=C3=B3ria?<span style=3D"color: #d93025;" aria=
+-label=3D"Required question"> *</span></h2></div><div style=3D"padding: 0 1=
+2px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"white-space: p=
+re-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-=
+height: 20px;display: inline-block; max-width: 100%; min-width: 50%;">15.00=
+0.00</div></div></div></div><div style=3D"border: 1px solid #dadce0; paddin=
+g: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12p=
+x;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" st=
+yle=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,A=
+rial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-=
+space: pre-wrap;margin: 0 0 16px;">2) Qual a renda l=C3=ADquida, ap=C3=B3s =
+os descontos?<span style=3D"color: #d93025;" aria-label=3D"Required questio=
+n"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"width:=
+ 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px=
+ dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inli=
+ne-block; max-width: 100%; min-width: 50%;">11.000.00</div></div></div></di=
+v><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-co=
+lor: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><d=
+iv style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font=
+-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size:=
+ 16px; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 =
+0 16px;">3) Houve diferen=C3=A7a nos valores que voc=C3=AA tinha calculado =
+antes dos descontos, e ap=C3=B3s contabiliz=C3=A1-los?<span style=3D"color:=
+ #d93025;" aria-label=3D"Required question"> *</span></h2></div><div style=
+=3D"padding: 0 12px;"><div dir=3D"auto" style=3D"white-space: pre-wrap;bord=
+er-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px=
+;width: 100%;">N=C3=A3o houve diferen=C3=A7a consider=C3=A1vel, pois os des=
+contos eram previstos.</div></div></div><div style=3D"border: 1px solid #da=
+dce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin=
+-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=
+=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto=
+,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height:=
+ 24px;white-space: pre-wrap;margin: 0 0 16px;">4) Se sua resposta foi sim, =
+escreva qual a diferen=C3=A7a.<span style=3D"color: #d93025;" aria-label=3D=
+"Required question"> *</span></h2></div><div style=3D"padding: 0 12px;"><di=
+v style=3D"width: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;b=
+order-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 2=
+0px;display: inline-block; max-width: 100%; min-width: 50%;">A diferen=C3=
+=A7a est=C3=A1 nos descontos que foram feitos previamente.</div></div></div=
+></div></form></div><table align=3D"center" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"max-width: 672px; min-width: 154px;" width=3D"100%" role=3D=
+"presentation"><tbody><tr height=3D"24px"><td></td></tr><tr><td><a href=3D"=
+https://docs.google.com/forms?usp=3Dmail_form_link" style=3D"color: #424242=
+; font-size: 13px;">Create your own Google Form</a></td></tr></tbody></tabl=
+e></div></body></html>
+--000000000000c74b3305af61abc7--

@@ -1,0 +1,449 @@
+Delivered-To: lucas.arifa100@gmail.com
+Received: by 2002:ac0:e352:0:0:0:0:0 with SMTP id g18csp2076534imn;
+        Sun, 13 Sep 2020 13:36:34 -0700 (PDT)
+X-Received: by 2002:ab0:700c:: with SMTP id k12mr5509313ual.132.1600029394525;
+        Sun, 13 Sep 2020 13:36:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1600029394; cv=none;
+        d=google.com; s=arc-20160816;
+        b=E629ig6KJ87iWP7Loeh1VV3QIU9BFhXTsqWR0UrxUwi7QnF66lySODaYl9WQza/fjT
+         GXuqrH9fdDmL7xdX/9pOPGZk0EYVCoCVOoYKxiGqWLiTne/sGG3BxbPOexwWXVfdInwp
+         mu41zPh60cwrWwm4jtgvo3iPwjdy0RXVaJtHBKIWBTF8HSx171RhZ+8Qe+k7OSHIuECD
+         qDMpVyu4ZDdnsbOoNvRXMRPD1lput7LxxrFAIR8P3JVUmTXAqYloFRS2yNEEykGxPMWy
+         YTE2uW2asBnp7ssSCF5NjS92SguKLSsmSjqxpO1bGolkoCasijCELse1X43iLIWa5FA5
+         1Piw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:mime-version:dkim-signature;
+        bh=h/9r2eIoUwW71WIGkrgpwUYNi6PacztlQLydvec8znk=;
+        b=fgnI+5fL7uxZgjNyBFMzdgZClA04YDyCnVj1ztezKb2cVw5Z9sZU5I5Je4CCawPhRe
+         CtHiozt+efd2u/QuELuhDIWi0kH3CaE+uvPRXZBhg8HFJNyxhmvTsKSye7s4TKhnIka8
+         dElHZaep8DDmAj2ExwGD/s+TosHBeOy7/NMZCXmGA6qx9GbQVxlXKzprfImNilD3mWPs
+         shWDVdW7mCjv9HXOU+9GUVxJ9Mljn0fSfuqtjFJpLdeRApJULs5oSpCWrJJhxBXY9QYt
+         Ee1nWkA4gIAWMM8a84zsKdLShte1j2CUNwdvQ64Gw84H9tRl9VoICK3dJqUEykFddPhN
+         xwEA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=NVEv9OCB;
+       spf=pass (google.com: domain of 30ojexxykafm09c7d-czxz3aed-89cza6j19916z.x97@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=30oJeXxYKAFM09C7D-Czxz3AED-89CzA6J19916z.x97@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <30oJeXxYKAFM09C7D-Czxz3AED-89CzA6J19916z.x97@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id k9sor1615358uaq.35.2020.09.13.13.36.34
+        for <lucas.arifa100@gmail.com>
+        (Google Transport Security);
+        Sun, 13 Sep 2020 13:36:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 30ojexxykafm09c7d-czxz3aed-89cza6j19916z.x97@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=NVEv9OCB;
+       spf=pass (google.com: domain of 30ojexxykafm09c7d-czxz3aed-89cza6j19916z.x97@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=30oJeXxYKAFM09C7D-Czxz3AED-89CzA6J19916z.x97@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:message-id:date:subject:from:to;
+        bh=h/9r2eIoUwW71WIGkrgpwUYNi6PacztlQLydvec8znk=;
+        b=NVEv9OCB41eQEhWVi6s5a1PAYNZdcbZGz5e0ZBC68mH9Lah0h/lJOXA2iY7nG0XHDt
+         vt/Z8++lQ6jHC4JgVyaUZ90eRep4gyXCyoq7T95zmKyMapAWZQYrNHdv7tnqOkVPT+Fi
+         KWdch2n2othxG6RfLpxHBap93tohSyHinC8ipdaliLR0kaEn2fF8nDIV2lFoTcZCFQ0M
+         pCuRYcZcIHNyBcnmRYjRI7eB/pycrT1VOu3SM5SrdxbYSDh9IHVYZAmHDpsZ7P5suddd
+         lD7TCiu0HQV45v6IgAKhIiaF/Z6ewBCD/my0t8P8u8Ra+Kdh/A+r+XrkTURs8IRXDx+F
+         sWSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:message-id:date:subject:from:to;
+        bh=h/9r2eIoUwW71WIGkrgpwUYNi6PacztlQLydvec8znk=;
+        b=KG0ZGClK9fTuX88rNpp6N2yO5byuuer7HjjwYfVnFm7NDnuMeMCzDcQWU8QLuu7vZh
+         DSnDzBSFA7p34Q0aoptfvH+Alu7i7/4qfS72DXUI0NtI49MChvT8xk3z3uiXOE7R34tU
+         aZLkNcl9+Mz+imZ6aiFoJjQmuitg7Wx1iMM7S6n5R9Wr8mIzLLGShVSnpi8fwKLWqW5W
+         QNgC+SqaOZ842MKpZvnUVsbGqSxfT/bvYIJPKpwobHbL15ZlRSw7sJgDVw6Aq378Rkl9
+         cMzW2HyVFLf2u6Acq4X9eCHFON7NXcTqpZcg7Zw8aBe3HMsguA4HkKtCf/FXs8OZDplm
+         ob2Q==
+X-Gm-Message-State: AOAM531Xa5O9ptA0tFDjzTJWk2KSccB/d7ApOB6FtRqhx1Xa3N6cdKDt
+	n7tHNyaQWcN9/DI4cRYSQ3vxqmRV0E8NS5wHkJAkmA==
+X-Google-Smtp-Source: ABdhPJxrYfxdJSdqlJkfBBwGvSZkqInIfQQZLDpJHGCTeVKVOciZukHHXFKdFo+FhawlNX/GYreK0zzmlDK3IfWsxohzVw==
+MIME-Version: 1.0
+X-Received: by 2002:a9f:3dc7:: with SMTP id e7mr5469896uaj.3.1600029394204;
+ Sun, 13 Sep 2020 13:36:34 -0700 (PDT)
+Message-ID: <000000000000ac02bd05af37df3d@google.com>
+Date: Sun, 13 Sep 2020 20:36:34 +0000
+Subject: Atividade 4 : Custo de Vida
+From: Google Forms <forms-receipts-noreply@google.com>
+To: lucas.arifa100@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000ac02a805af37df3a"
+
+--000000000000ac02a805af37df3a
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+R29vZ2xlIEZvcm1zDQoNCg0KVGhhbmtzIGZvciBmaWxsaW5nIG91dCBBdGl2aWRhZGUgNCA6IEN1
+c3RvIGRlIFZpZGENCkhlcmUncyB3aGF0IHdlIGdvdCBmcm9tIHlvdToNCg0KDQpBdGl2aWRhZGUg
+NCA6IEN1c3RvIGRlIFZpZGENCg0KUGVuc2UgbmEgZmFtw61saWEgcXVlIHZvY8OqIGNyaW91IGUg
+b2JzZXJ2ZSBjb20gYXRlbsOnw6NvIHRvZG9zIG9zIGl0ZW5zIGRlICANCmNhZGEgdW0gZG9zIHNl
+Z3VpbnRlcyBncnVwb3M6IGxhemVyLCBlZHVjYcOnw6NvLCBzYcO6ZGUgZSBoaWdpZW5lLiBFc3Bl
+Y2lmaXF1ZSAgDQpvcyBnYXN0b3MgZGEgZmFtw61saWEgY29tIGNhZGEgdW0gZG9zIGl0ZW5zLCBj
+b25mb3JtZSBvcyBjYXJ0w7VlcyAgDQpkaXNwb25pYmlsaXphZG9zLiBGaXF1ZSB0cmFucXVpbG8o
+YSksIHVtYSBjw7NwaWEgZGFzIHJlc3Bvc3RhcyBzZXLDoSBlbnZpYWRhICANCnBhcmEgbyBzZXUg
+ZS1tYWlsLg0KDQoNCkVtYWlsIGFkZHJlc3MgKg0KDQoNCmx1Y2FzLmFyaWZhMTAwQGdtYWlsLmNv
+bQ0KDQoNCjEuIExBWkVSOiBpbnNpcmEgdmFsb3JlcyBtZW5zYWlzIChhcGVuYXMgbsO6bWVyb3Mp
+IG5vcyBpdGVucyBxdWUgc2UgYXBsaWNhbSAgDQrDoCBmYW3DrWxpYSBxdWUgY3Jpb3UuDQoNCkNh
+cHRpb25sZXNzIEltYWdlDQoNCg0KU2hvcHBpbmcsIFByYWlhDQoNCg0KMTAwDQoNCg0KQ2luZW1h
+LCBUZWF0cm8sIE11c2V1DQoNCg0KNTANCg0KDQpIYXBweSBIb3VyLCBCYXINCg0KDQoxMDANCg0K
+DQpCYWxhZGEsIEJhaWxlDQoNCg0KMTAwDQoNCg0KVmlhZ2VtDQoNCg0KMTAwDQoNCg0KT3V0cm9z
+DQoNCg0KNTANCg0KDQpTb21hbmRvIHR1ZG8sIHF1YW50byBhIHN1YSBmYW3DrWxpYSBnYXN0YSBw
+b3IgbcOqcyBjb20gYXMgZGVzcGVzYXMgZGUgTGF6ZXI/ICoNCg0KDQo1MDANCg0KDQoyLiBFRFVD
+QcOHw4NPOiBpbnNpcmEgdmFsb3JlcyBtZW5zYWlzIChhcGVuYXMgbsO6bWVyb3MpIG5vcyBpdGVu
+cyBxdWUgc2UgIA0KYXBsaWNhbSDDoCBmYW3DrWxpYSBxdWUgY3Jpb3UuDQoNCkNhcHRpb25sZXNz
+IEltYWdlDQoNCg0KTWVuc2FsaWRhZGUNCg0KDQowDQoNCg0KTWF0ZXJpYWwgZXNjb2xhcg0KDQoN
+CjEwMA0KDQoNCkJhYsOhLCBDdWlkYWRvcg0KDQoNCjANCg0KDQpUZXJhcGlhDQoNCg0KMA0KDQoN
+CklkaW9tYQ0KDQoNCjE1MA0KDQoNCkN1cnNvcyBFeHRyYXMNCg0KDQowDQoNCg0KT3V0cm9zDQoN
+Cg0KNTANCg0KDQpTb21hbmRvIHR1ZG8sIHF1YW50byBhIHN1YSBmYW3DrWxpYSBnYXN0YSBwb3Ig
+bcOqcyBjb20gYXMgZGVzcGVzYXMgZGUgIA0KRWR1Y2HDp8Ojbz8gKg0KDQoNCjMwMA0KDQoNCjMu
+IFNBw5pERSwgSElHSUVORTogaW5zaXJhIHZhbG9yZXMgbWVuc2FpcyAoYXBlbmFzIG7Dum1lcm9z
+KSBub3MgaXRlbnMgcXVlIHNlICANCmFwbGljYW0gw6AgZmFtw61saWEgcXVlIGNyaW91Lg0KDQpD
+YXB0aW9ubGVzcyBJbWFnZQ0KDQoNClBsYW5vIFNhw7pkZQ0KDQoNCjE1MA0KDQoNClBsYW5vIE9k
+b250bw0KDQoNCjE1MA0KDQoNClJlbcOpZGlvDQoNCg0KNTANCg0KDQpBY2FkZW1pYQ0KDQoNCjgw
+DQoNCg0KU2Fsw6NvIGRlIGJlbGV6YQ0KDQoNCjANCg0KDQpQZXQgLSBWZXRlcmluw6FyaW8NCg0K
+DQo1MA0KDQoNCkNvc23DqXRpY29zDQoNCg0KMA0KDQoNCk91dHJvcw0KDQoNCjUwDQoNCg0KU29t
+YW5kbyB0dWRvLCBxdWFudG8gYSBzdWEgZmFtw61saWEgZ2FzdGEgcG9yIG3DqnMgY29tIGFzIGRl
+c3Blc2FzIGRlIFNhw7pkZSwgIA0KSGlnaWVuZT8gKg0KDQoNCjUzMA0KDQoNCkNyZWF0ZSB5b3Vy
+IG93biBHb29nbGUgRm9ybQ0KDQoNCg==
+--000000000000ac02a805af37df3a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style nonce=3D"DE+5srrDBTMf8q/ojYvr4w">@import url(https://fon=
+ts.googleapis.com/css?family=3DGoogle+Sans:400,500|Roboto:300,400,400i,500,=
+700&subset=3Dlatin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-e=
+xt);</style><style nonce=3D"DE+5srrDBTMf8q/ojYvr4w">[class=3D"x_body-conten=
+t-wrapper"] * {white-space: normal !important;}</style></head><body dir=3D"=
+ltr" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;text-align: start; wo=
+rd-wrap: break-word; margin: 0; padding: 0; height: 100%; width: 100%;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-co=
+lor:rgb(122,122,122);" width=3D"100%" role=3D"presentation"><tbody><tr heig=
+ht=3D"64px"><td style=3D"padding: 0 24px;"><img alt=3D"Google Forms" height=
+=3D"26px" style=3D"display: inline-block; margin: 0; vertical-align: middle=
+;" width=3D"143px" src=3D"https://www.gstatic.com/docs/forms/google_forms_l=
+ogo_lockup_white_2x.png"></td></tr></tbody></table><div class=3D"body-conte=
+nt-wrapper" style=3D"padding: 12px; background-color: rgb(235,235,235);"><d=
+iv style=3D"margin: 0 auto; max-width: 640px; min-width: 154px;"><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;padding: 20px;"><h1 style=3D"color: =
+#202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-seri=
+f;font-size: 20px; font-weight: 400; line-height: 28px;margin: 0 0 12px;">T=
+hanks for filling out <a href=3D"https://docs.google.com/forms/d/e/1FAIpQLS=
+d7FtuAAwlWwLSq75HNw0gW4tuJZRjE0xoNWeedw7GZ_PifBQ/viewform?usp=3Dmail_form_l=
+ink" target=3D"_blank" style=3D"white-space: pre-wrap;">Atividade 4 : Custo=
+ de Vida</a></h1>Here's what we got from you:</div><div style=3D"border-bot=
+tom: 1px solid #dadce0; border-left: 1px solid #dadce0; border-right: 1px s=
+olid #dadce0; border-top: 8px solid rgb(122,122,122); padding: 20px;backgro=
+und-color: #fff; border-radius: 8px; margin-bottom: 12px;"><h1 dir=3D"ltr" =
+style=3D"font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-ser=
+if;font-size: 32px; font-weight: 400; line-height: 42px;white-space: pre-wr=
+ap;margin: 0 0 12px;">Atividade 4 : Custo de Vida</h1><div style=3D"white-s=
+pace: pre-wrap;margin-bottom: 12px;">Pense na fam=C3=ADlia que voc=C3=AA cr=
+iou e observe com aten=C3=A7=C3=A3o todos os itens de cada um dos seguintes=
+ grupos: lazer, educa=C3=A7=C3=A3o, sa=C3=BAde e higiene. Especifique os ga=
+stos da fam=C3=ADlia com cada um dos itens, conforme os cart=C3=B5es dispon=
+ibilizados.
+
+Fique tranquilo(a), uma c=C3=B3pia das respostas ser=C3=A1 enviada para o s=
+eu e-mail. </div></div><form action=3D'' method=3D'GET'><div style=3D"borde=
+r: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-rad=
+ius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: =
+0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Google =
+Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 4=
+00; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Email addres=
+s<span style=3D"color: #d93025;" aria-label=3D"Required question"> *</span>=
+</h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div=
+ dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba=
+(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-block; ma=
+x-width: 100%; min-width: 50%;">lucas.arifa100@gmail.com</div></div></div><=
+/div><div style=3D"border-bottom: 1px solid #dadce0; border-left: 1px solid=
+ #dadce0; border-right: 1px solid #dadce0; border-top: 8px solid rgb(122,12=
+2,122); padding: 0;background-color: #fff; border-radius: 8px; margin-botto=
+m: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 ;"><h2 dir=3D"auto" =
+style=3D"color: #fff;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Ar=
+ial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;backgro=
+und-color: rgb(122,122,122); margin: 0; padding: 4px 24px 12px;border-botto=
+m-left-radius: 8px; border-bottom-right-radius: 8px;"></h2></div><div style=
+=3D"padding: 0 12px;"></div></div><div style=3D"border: 1px solid #dadce0; =
+padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-botto=
+m: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"au=
+to" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helve=
+tica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;=
+white-space: pre-wrap;margin: 0 0 16px;">1. LAZER: insira valores mensais (=
+apenas n=C3=BAmeros) nos itens que se aplicam =C3=A0 fam=C3=ADlia que criou=
+. </h2><div style=3D"text-align: left;"><img style=3D"border: none; max-hei=
+ght: 100%; max-width: 100%;width: 363px; " title=3D"" src=3D"https://lh4.go=
+ogleusercontent.com/YNKS2h5pIhJSUL3uaa6ZvOCCwg6Tc4L6YwKAVRztz4As0z4-nxXyNeI=
+W9kRQDn_Q9cw-XD0dmJ8qPZWrtAa7SHxw9jE3Z8cB4gudMh5_zw14rQYwAWAb6Rf1XduU=3Dw36=
+3" alt=3D"Captionless Image"></div></div><div style=3D"padding: 0 12px;"></=
+div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;backg=
+round-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 1=
+2px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202=
+124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;fo=
+nt-size: 16px; font-weight: 400; line-height: 24px;white-space: pre-wrap;ma=
+rgin: 0 0 16px;">Shopping, Praia</h2></div><div style=3D"padding: 0 12px;">=
+<div style=3D"width: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wra=
+p;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height=
+: 20px;display: inline-block; max-width: 100%; min-width: 50%;">100</div></=
+div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px=
+;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bot=
+tom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color=
+: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-se=
+rif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: pre-w=
+rap;margin: 0 0 16px;">Cinema, Teatro, Museu</h2></div><div style=3D"paddin=
+g: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"white-sp=
+ace: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px=
+; min-height: 20px;display: inline-block; max-width: 100%; min-width: 50%;"=
+>50</div></div></div></div><div style=3D"border: 1px solid #dadce0; padding=
+: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px=
+;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" sty=
+le=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Ar=
+ial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-s=
+pace: pre-wrap;margin: 0 0 16px;">Happy Hour, Bar</h2></div><div style=3D"p=
+adding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"whi=
+te-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px =
+0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-width: =
+50%;">100</div></div></div></div><div style=3D"border: 1px solid #dadce0; p=
+adding: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom=
+: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"aut=
+o" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvet=
+ica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;w=
+hite-space: pre-wrap;margin: 0 0 16px;">Balada, Baile</h2></div><div style=
+=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=
+=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin=
+: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-=
+width: 50%;">100</div></div></div></div><div style=3D"border: 1px solid #da=
+dce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin=
+-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=
+=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto=
+,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height:=
+ 24px;white-space: pre-wrap;margin: 0 0 16px;">Viagem</h2></div><div style=
+=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=
+=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin=
+: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-=
+width: 50%;">100</div></div></div></div><div style=3D"border: 1px solid #da=
+dce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin=
+-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=
+=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto=
+,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height:=
+ 24px;white-space: pre-wrap;margin: 0 0 16px;">Outros</h2></div><div style=
+=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=
+=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin=
+: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-=
+width: 50%;">50</div></div></div></div><div style=3D"border: 1px solid #dad=
+ce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-=
+bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=
+=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto=
+,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height:=
+ 24px;white-space: pre-wrap;margin: 0 0 16px;">Somando tudo, quanto a sua f=
+am=C3=ADlia gasta por m=C3=AAs com as despesas de Lazer?<span style=3D"colo=
+r: #d93025;" aria-label=3D"Required question"> *</span></h2></div><div styl=
+e=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=
+=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin=
+: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-=
+width: 50%;">500</div></div></div></div><div style=3D"border-bottom: 1px so=
+lid #dadce0; border-left: 1px solid #dadce0; border-right: 1px solid #dadce=
+0; border-top: 8px solid rgb(122,122,122); padding: 0;background-color: #ff=
+f; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=
+=3D"padding: 0 ;"><h2 dir=3D"auto" style=3D"color: #fff;font-family: &#39;G=
+oogle Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-wei=
+ght: 400; line-height: 24px;background-color: rgb(122,122,122); margin: 0; =
+padding: 4px 24px 12px;border-bottom-left-radius: 8px; border-bottom-right-=
+radius: 8px;"></h2></div><div style=3D"padding: 0 12px;"></div></div><div s=
+tyle=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #ff=
+f; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=
+=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family:=
+ &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; f=
+ont-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;"=
+>2. EDUCA=C3=87=C3=83O: insira valores mensais (apenas n=C3=BAmeros) nos it=
+ens que se aplicam =C3=A0 fam=C3=ADlia que criou.</h2><div style=3D"text-al=
+ign: left;"><img style=3D"border: none; max-height: 100%; max-width: 100%;w=
+idth: 351px; " title=3D"" src=3D"https://lh3.googleusercontent.com/BRBS_bFz=
+13kf3KeiSfhlk4Gu8bJju6_ef5DDteMxvgrKtYOwenCMHQMDTQNAxyvIDW-ilC85f9I2ztQPX19=
+RCwyuAVTIu18XQBRHe650q38aEcVux2Fv2R3S-wZO=3Dw351" alt=3D"Captionless Image"=
+></div></div><div style=3D"padding: 0 12px;"></div></div><div style=3D"bord=
+er: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-ra=
+dius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding:=
+ 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Google=
+ Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: =
+400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Mensalidade=
+</h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div=
+ dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba=
+(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-block; ma=
+x-width: 100%; min-width: 50%;">0</div></div></div></div><div style=3D"bord=
+er: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-ra=
+dius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding:=
+ 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Google=
+ Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: =
+400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Material es=
+colar</h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"=
+><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted=
+ rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-bloc=
+k; max-width: 100%; min-width: 50%;">100</div></div></div></div><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"=
+padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#3=
+9;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-=
+weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Bab=
+=C3=A1, Cuidador</h2></div><div style=3D"padding: 0 12px;"><div style=3D"wi=
+dth: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom:=
+ 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: =
+inline-block; max-width: 100%; min-width: 50%;">0</div></div></div></div><d=
+iv style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color:=
+ #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div s=
+tyle=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-fam=
+ily: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16p=
+x; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16=
+px;">Terapia</h2></div><div style=3D"padding: 0 12px;"><div style=3D"width:=
+ 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px=
+ dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inli=
+ne-block; max-width: 100%; min-width: 50%;">0</div></div></div></div><div s=
+tyle=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #ff=
+f; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=
+=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family:=
+ &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; f=
+ont-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;"=
+>Idioma</h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%=
+;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dott=
+ed rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-bl=
+ock; max-width: 100%; min-width: 50%;">150</div></div></div></div><div styl=
+e=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; =
+border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D=
+"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#=
+39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font=
+-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Cu=
+rsos Extras</h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: =
+100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px =
+dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inlin=
+e-block; max-width: 100%; min-width: 50%;">0</div></div></div></div><div st=
+yle=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff=
+; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=
+=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family:=
+ &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; f=
+ont-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;"=
+>Outros</h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%=
+;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dott=
+ed rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-bl=
+ock; max-width: 100%; min-width: 50%;">50</div></div></div></div><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"=
+padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#3=
+9;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-=
+weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Som=
+ando tudo, quanto a sua fam=C3=ADlia gasta por m=C3=AAs com as despesas de =
+Educa=C3=A7=C3=A3o?<span style=3D"color: #d93025;" aria-label=3D"Required q=
+uestion"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"=
+width: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-botto=
+m: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display=
+: inline-block; max-width: 100%; min-width: 50%;">300</div></div></div></di=
+v><div style=3D"border-bottom: 1px solid #dadce0; border-left: 1px solid #d=
+adce0; border-right: 1px solid #dadce0; border-top: 8px solid rgb(122,122,1=
+22); padding: 0;background-color: #fff; border-radius: 8px; margin-bottom: =
+12px;margin-bottom: 12px;"><div style=3D"padding: 0 ;"><h2 dir=3D"auto" sty=
+le=3D"color: #fff;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial=
+,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;background=
+-color: rgb(122,122,122); margin: 0; padding: 4px 24px 12px;border-bottom-l=
+eft-radius: 8px; border-bottom-right-radius: 8px;"></h2></div><div style=3D=
+"padding: 0 12px;"></div></div><div style=3D"border: 1px solid #dadce0; pad=
+ding: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom: =
+12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto"=
+ style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetic=
+a,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;whi=
+te-space: pre-wrap;margin: 0 0 16px;">3. SA=C3=9ADE, HIGIENE: insira valore=
+s mensais (apenas n=C3=BAmeros) nos itens que se aplicam =C3=A0 fam=C3=ADli=
+a que criou.</h2><div style=3D"text-align: left;"><img style=3D"border: non=
+e; max-height: 100%; max-width: 100%;width: 352px; " title=3D"" src=3D"http=
+s://lh5.googleusercontent.com/q73q2oAHS6h9NxN_ZgcV_5GnySpRo8qI8-nU1y7Oh144n=
+CdqrTUVsMa6L9mbsev7vBNldQjw--kcwlvMk3TmxMv_nNvjCoOW39_P1vxsPTtxHKjaGt06RFnH=
+jy6E=3Dw352" alt=3D"Captionless Image"></div></div><div style=3D"padding: 0=
+ 12px;"></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px =
+12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin=
+-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"c=
+olor: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,san=
+s-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: p=
+re-wrap;margin: 0 0 16px;">Plano Sa=C3=BAde</h2></div><div style=3D"padding=
+: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"white-spa=
+ce: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px;=
+ min-height: 20px;display: inline-block; max-width: 100%; min-width: 50%;">=
+150</div></div></div></div><div style=3D"border: 1px solid #dadce0; padding=
+: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px=
+;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" sty=
+le=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Ar=
+ial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-s=
+pace: pre-wrap;margin: 0 0 16px;">Plano Odonto</h2></div><div style=3D"padd=
+ing: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"white-=
+space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8=
+px; min-height: 20px;display: inline-block; max-width: 100%; min-width: 50%=
+;">150</div></div></div></div><div style=3D"border: 1px solid #dadce0; padd=
+ing: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom: 1=
+2px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" =
+style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica=
+,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;whit=
+e-space: pre-wrap;margin: 0 0 16px;">Rem=C3=A9dio</h2></div><div style=3D"p=
+adding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"whi=
+te-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px =
+0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-width: =
+50%;">50</div></div></div></div><div style=3D"border: 1px solid #dadce0; pa=
+dding: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom:=
+ 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto=
+" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helveti=
+ca,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;wh=
+ite-space: pre-wrap;margin: 0 0 16px;">Academia</h2></div><div style=3D"pad=
+ding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"white=
+-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 =
+8px; min-height: 20px;display: inline-block; max-width: 100%; min-width: 50=
+%;">80</div></div></div></div><div style=3D"border: 1px solid #dadce0; padd=
+ing: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom: 1=
+2px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" =
+style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica=
+,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;whit=
+e-space: pre-wrap;margin: 0 0 16px;">Sal=C3=A3o de beleza</h2></div><div st=
+yle=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" styl=
+e=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margi=
+n: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min=
+-width: 50%;">0</div></div></div></div><div style=3D"border: 1px solid #dad=
+ce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-=
+bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=
+=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto=
+,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height:=
+ 24px;white-space: pre-wrap;margin: 0 0 16px;">Pet - Veterin=C3=A1rio</h2><=
+/div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=
+=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0=
+,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-block; max-wi=
+dth: 100%; min-width: 50%;">50</div></div></div></div><div style=3D"border:=
+ 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-radiu=
+s: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 =
+12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sa=
+ns&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400=
+; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Cosm=C3=A9tico=
+s</h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><di=
+v dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgb=
+a(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-block; m=
+ax-width: 100%; min-width: 50%;">0</div></div></div></div><div style=3D"bor=
+der: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-r=
+adius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding=
+: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Googl=
+e Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight:=
+ 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Outros</h2=
+></div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=
+=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0=
+,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-block; max-wi=
+dth: 100%; min-width: 50%;">50</div></div></div></div><div style=3D"border:=
+ 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-radiu=
+s: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 =
+12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sa=
+ns&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400=
+; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Somando tudo, =
+quanto a sua fam=C3=ADlia gasta por m=C3=AAs com as despesas de Sa=C3=BAde,=
+ Higiene?<span style=3D"color: #d93025;" aria-label=3D"Required question"> =
+*</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: 100=
+%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dot=
+ted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-b=
+lock; max-width: 100%; min-width: 50%;">530</div></div></div></div></form><=
+/div><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"m=
+ax-width: 672px; min-width: 154px;" width=3D"100%" role=3D"presentation"><t=
+body><tr height=3D"24px"><td></td></tr><tr><td><a href=3D"https://docs.goog=
+le.com/forms?usp=3Dmail_form_link" style=3D"color: #424242; font-size: 13px=
+;">Create your own Google Form</a></td></tr></tbody></table></div></body></=
+html>
+--000000000000ac02a805af37df3a--

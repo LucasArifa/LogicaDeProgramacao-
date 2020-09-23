@@ -1,0 +1,249 @@
+Delivered-To: lucas.arifa100@gmail.com
+Received: by 2002:ac0:e352:0:0:0:0:0 with SMTP id g18csp73294imn;
+        Tue, 15 Sep 2020 15:32:46 -0700 (PDT)
+X-Received: by 2002:a25:c049:: with SMTP id c70mr31313715ybf.403.1600209166112;
+        Tue, 15 Sep 2020 15:32:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1600209166; cv=none;
+        d=google.com; s=arc-20160816;
+        b=LPnYpcwZ7kL15KP3K1w5WK/oLP8OqNr2NZY1WEYtQi5vzUOj+CeSkT1S3vZ15fa7fF
+         i9vERczHygp9yEXjwq8aBMyLnj2vNRCMN9cZMfRhE5t2fI5NYLBrv6oWl/308/PJL9v/
+         aWkZP/6MObc1y0R4ywqeG8iG0sNr6g0siqYAXQe5Z8g8pSmmO8EIP3LIBNLn5V8g1oHu
+         ZqKsMli+sSjbyWhGapLhmMxsbpK3Wu0CWoBbDpFhABVy7VQDcK79jaDytLkRcPEAi6XR
+         1FnxwnBUNagzJvoIIQKcrXpefLlSOoZC6q994C3hInRZeANLDW+QfxNNkLBDXCfUcbYG
+         Eekg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:mime-version:dkim-signature;
+        bh=IGD/ulIEajB+rdOsmv3nEtZNWxFEbxXgVDvsOURYjaM=;
+        b=elIovfyA/jkpCbgNV4+R1n3Vz1vFTacm5RnqaMTS9Mdep/NMTOUU1k5hYX+AMSo141
+         mMv3yVRvyMm+fx75Fd7v8M7q7Err9EimlHEbRivO+fewWGn4sTc8a1Vt0uNgTEJSugrY
+         mGV6OK11Qnb7OBRpwb6cX+2bkvy+ss1evvPGEGr13E5TvXLzFumj4qUGIqHRuD/rx5lV
+         +NhOu8rkGrBcHhwtwZCcT+wV7cobx884zYyXz3wgJseGeguaWvAxjMYBTy9RbRO3gneS
+         0Pu12GBJsXeKnOjfolHm6qDBueqsy+xLET3ET33cTw4lAB1S7qskibOmeN1uQp9f3OdB
+         BfJg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=NRnn5prc;
+       spf=pass (google.com: domain of 3dufhxxykaby1ad8e-d0y04bfe-9ad0b7k2aa270.ya8@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3DUFhXxYKABY1AD8E-D0y04BFE-9AD0B7K2AA270.yA8@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3DUFhXxYKABY1AD8E-D0y04BFE-9AD0B7K2AA270.yA8@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id w80sor3807678ybe.70.2020.09.15.15.32.46
+        for <lucas.arifa100@gmail.com>
+        (Google Transport Security);
+        Tue, 15 Sep 2020 15:32:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3dufhxxykaby1ad8e-d0y04bfe-9ad0b7k2aa270.ya8@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=NRnn5prc;
+       spf=pass (google.com: domain of 3dufhxxykaby1ad8e-d0y04bfe-9ad0b7k2aa270.ya8@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3DUFhXxYKABY1AD8E-D0y04BFE-9AD0B7K2AA270.yA8@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:message-id:date:subject:from:to;
+        bh=IGD/ulIEajB+rdOsmv3nEtZNWxFEbxXgVDvsOURYjaM=;
+        b=NRnn5prce+OnS0tUbZzHfFItkOqoCGxoAcfJHrhvM+er7pu1FnvE0rNuRtYaHiDGsG
+         GCdY3CgG3MgNlZh4hvW2CGaQXGilMvBhTVd22U1doB6mr1CvzeTtKOjlgty/mRM5SxA+
+         gyvWef5+4Z2aafEQJxELXd6e9SKYOQIteVDezff6OempakkXZLDG1XhD27jJOXH9vVms
+         UeLOryDrTAdrLnzxRZw/Ywo/y1gvuF9AXCeqWX53rvD6aPUBlZwcd5qhYOP51cpr8BVn
+         3slUC8edDA7c21gvuiMTigUeiNrNJt5l9JoX51FfMJ8CQeW04reK+D7R72O+NpArlGTJ
+         3ERQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:message-id:date:subject:from:to;
+        bh=IGD/ulIEajB+rdOsmv3nEtZNWxFEbxXgVDvsOURYjaM=;
+        b=hAuVNsYz7QoZGY/vjAv4xYbaCNoQX7S+fyVRhkbipaz112VLs9+5A+WJ3gRTuMGTuo
+         M3ZWy/UJC61Szg7rBNjRFR2Q9XaHcLUTDaKqEpW0acLXcWnFuCHiCrrZgy3TzzoniLsQ
+         pZfGx8kH4NhStaX5V0ezDf91PCoHOkpAGkTdSqTSdD70104u6HNzpPUGx4EPsi0nTORB
+         1/Sx6tYk0Ktri/69tSjed6c8/sn5P2FR9npMJ7icysDhG2+Z54JH3JKQvBinSv4Gh5V+
+         dGOZGqJcrYycAkwoWc9XRLwykmccHxX249JBWYBdb3RqpZV5ZH2EZOZJKU47FYRX45Vm
+         omBg==
+X-Gm-Message-State: AOAM531ztzO8h00/1RjAGuRTKxeAI0zyXRLZbsUrFSIQsGKU0tUAhrKV
+	mtRLHqNzHrVdhjYxHP4KjyfRnzJsRBmhpQ0lfb1nTA==
+X-Google-Smtp-Source: ABdhPJw9YDckNoyJN2tLMKREjQNni+97WEgYm/we93wJ926NGZir0K3pIO4tBZ8Xfir8oc/swKyzL3AGBie6/5Em/S6hLw==
+MIME-Version: 1.0
+X-Received: by 2002:a25:e089:: with SMTP id x131mr29030069ybg.216.1600209165771;
+ Tue, 15 Sep 2020 15:32:45 -0700 (PDT)
+Message-ID: <000000000000e46a4b05af61bacb@google.com>
+Date: Tue, 15 Sep 2020 22:32:45 +0000
+Subject: =?UTF-8?Q?O_dinheiro_est=C3=A1_sobrando_ou_faltando=3F_?=
+From: Google Forms <forms-receipts-noreply@google.com>
+To: lucas.arifa100@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000e46a3c05af61bac8"
+
+--000000000000e46a3c05af61bac8
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+R29vZ2xlIEZvcm1zDQoNCg0KVGhhbmtzIGZvciBmaWxsaW5nIG91dCBPIGRpbmhlaXJvIGVzdMOh
+IHNvYnJhbmRvIG91IGZhbHRhbmRvPw0KSGVyZSdzIHdoYXQgd2UgZ290IGZyb20geW91Og0KDQoN
+Ck8gZGluaGVpcm8gZXN0w6Egc29icmFuZG8gb3UgZmFsdGFuZG8/DQoNCg0KRW1haWwgYWRkcmVz
+cyAqDQoNCg0KbHVjYXMuYXJpZmExMDBAZ21haWwuY29tDQoNCg0KTm9tZSBjb21wbGV0bzogKg0K
+DQoNCkx1Y2FzIEhlbnJpcXVlIEFyaWZhIFNpbHZhDQoNCg0KQ2VsdWxhcjogKERERCtOw7ptZXJv
+KSAqDQoNCg0KMTE5MzI4Mjc3NDUNCg0KDQpDYXB0aW9ubGVzcyBJbWFnZQ0KDQoNCjEpIE5hIHN1
+YSBmYW3DrWxpYSwgc29icmEgb3UgZmFsdGEgZGluaGVpcm8/IFJlc3BvbmRhIGFiYWl4bzogKg0K
+DQoNClNvYnJhDQoNCg0KRmFsdGENCg0KDQoyKSBFc2NyZXZhIGFiYWl4byBvIHZhbG9yIHF1ZSBz
+b2JyYSAoKyB2YWxvciB4KSwgb3UgcXVlIGZhbHRhICgtIHZhbG9yIHgpLiAqDQoNCg0KLTEyNA0K
+DQoNCjMpIEltYWdpbmUgcXVlIGVzdMOhIGZhbHRhbmRvIGRpbmhlaXJvIHBhcmEgYSBmYW3DrWxp
+YSBkYSBzdWEgaGlzdMOzcmlhLiBPIHF1ZSAgDQplbGVzIGZhcmlhbT8gKg0KDQoNClBlZ2FyIGVt
+cHJlc3RhZG8gY29tIHBhcmVudGVzIG91IGFtaWdvcy4NCg0KDQpVc2FyIG8gY2hlcXVlIGVzcGVj
+aWFsLg0KDQoNCkZhemVyIHVtIGVtcHLDqXN0aW1vIG5vIGJhbmNvLg0KDQoNClByb2N1cmFyIG9i
+dGVyIHJlbmRhIGV4dHJhLg0KDQoNCk90aGVyOg0KDQoNCkNyZWF0ZSB5b3VyIG93biBHb29nbGUg
+Rm9ybQ0KDQoNCg==
+--000000000000e46a3c05af61bac8
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style nonce=3D"g6TB0K/DWMig7bJb7fS5oQ">@import url(https://fon=
+ts.googleapis.com/css?family=3DGoogle+Sans:400,500|Roboto:300,400,400i,500,=
+700&subset=3Dlatin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-e=
+xt);</style><style nonce=3D"g6TB0K/DWMig7bJb7fS5oQ">[class=3D"x_body-conten=
+t-wrapper"] * {white-space: normal !important;}</style></head><body dir=3D"=
+ltr" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;text-align: start; wo=
+rd-wrap: break-word; margin: 0; padding: 0; height: 100%; width: 100%;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-co=
+lor:rgb(122,122,122);" width=3D"100%" role=3D"presentation"><tbody><tr heig=
+ht=3D"64px"><td style=3D"padding: 0 24px;"><img alt=3D"Google Forms" height=
+=3D"26px" style=3D"display: inline-block; margin: 0; vertical-align: middle=
+;" width=3D"143px" src=3D"https://www.gstatic.com/docs/forms/google_forms_l=
+ogo_lockup_white_2x.png"></td></tr></tbody></table><div class=3D"body-conte=
+nt-wrapper" style=3D"padding: 12px; background-color: rgb(235,235,235);"><d=
+iv style=3D"margin: 0 auto; max-width: 640px; min-width: 154px;"><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;padding: 20px;"><h1 style=3D"color: =
+#202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-seri=
+f;font-size: 20px; font-weight: 400; line-height: 28px;margin: 0 0 12px;">T=
+hanks for filling out <a href=3D"https://docs.google.com/forms/d/e/1FAIpQLS=
+cydFWO7WOAZQZDWPruUkETKgzjgBtGuSTS7pZlnQmQJXdNcw/viewform?usp=3Dmail_form_l=
+ink" target=3D"_blank" style=3D"white-space: pre-wrap;">O dinheiro est=C3=
+=A1 sobrando ou faltando? </a></h1>Here's what we got from you:</div><div s=
+tyle=3D"border-bottom: 1px solid #dadce0; border-left: 1px solid #dadce0; b=
+order-right: 1px solid #dadce0; border-top: 8px solid rgb(122,122,122); pad=
+ding: 20px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;=
+"><h1 dir=3D"ltr" style=3D"font-family: &#39;Google Sans&#39;,Roboto,Helvet=
+ica,Arial,sans-serif;font-size: 32px; font-weight: 400; line-height: 42px;w=
+hite-space: pre-wrap;margin: 0 0 12px;">O dinheiro est=C3=A1 sobrando ou fa=
+ltando? </h1><div style=3D"white-space: pre-wrap;margin-bottom: 12px;"></di=
+v></div><form action=3D'' method=3D'GET'><div style=3D"border: 1px solid #d=
+adce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margi=
+n-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 di=
+r=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Robot=
+o,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height=
+: 24px;white-space: pre-wrap;margin: 0 0 16px;">Email address<span style=3D=
+"color: #d93025;" aria-label=3D"Required question"> *</span></h2></div><div=
+ style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" s=
+tyle=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);ma=
+rgin: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 100%; =
+min-width: 50%;">lucas.arifa100@gmail.com</div></div></div></div><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"=
+padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#3=
+9;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-=
+weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Nom=
+e completo:<span style=3D"color: #d93025;" aria-label=3D"Required question"=
+> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"width: 1=
+00%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px d=
+otted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline=
+-block; max-width: 100%; min-width: 50%;">Lucas Henrique Arifa Silva </div>=
+</div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 12=
+px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-b=
+ottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"col=
+or: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-=
+serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: pre=
+-wrap;margin: 0 0 16px;">Celular: (DDD+N=C3=BAmero)<span style=3D"color: #d=
+93025;" aria-label=3D"Required question"> *</span></h2></div><div style=3D"=
+padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"wh=
+ite-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px=
+ 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-width:=
+ 50%;">11932827745</div></div></div></div><div style=3D"border: 1px solid #=
+dadce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; marg=
+in-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><div =
+style=3D"text-align: center;"><img style=3D"border: none; max-height: 100%;=
+ max-width: 100%;width: 359px; " title=3D"" src=3D"https://lh4.googleuserco=
+ntent.com/lySdQqmkYQT0s4SMLU3PLGQhrqKSRpapoMjdWaz2DbWXJI2DqFEBqm4S8XzXijFhs=
+cGyBNODRRadMuqFhigA-V3Ggpb2loGHIFe3lUHLvvN617HTE-C11Je0CSBL=3Dw359" alt=3D"=
+Captionless Image"></div></div><div style=3D"padding: 0 12px;"></div></div>=
+<div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-colo=
+r: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div=
+ style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-f=
+amily: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 1=
+6px; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 =
+16px;">1) Na sua fam=C3=ADlia, sobra ou falta dinheiro? Responda abaixo:<sp=
+an style=3D"color: #d93025;" aria-label=3D"Required question"> *</span></h2=
+></div><div style=3D"padding: 0 12px;"><div style=3D"margin-top: 16px;"><ta=
+ble style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;=
+font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-=
+top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D=
+"false" aria-label=3D"Sobra" style=3D"border: solid 2px #9aa0a6; height: 16=
+px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8p=
+x;"></td><td style=3D"word-break: break-word;">Sobra</td></tr></table></div=
+><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-famil=
+y: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; lin=
+e-height: 20px;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"=
+radio" aria-checked=3D"true" aria-label=3D"Falta" style=3D"border: solid 2p=
+x #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div style=3D"ba=
+ckground-color: #5f6368; border: solid 5px #5f6368; border-radius: 50%; mar=
+gin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"min-width: 8p=
+x;"></td><td style=3D"word-break: break-word;">Falta</td></tr></table></div=
+></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;ba=
+ckground-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom=
+: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #=
+202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif=
+;font-size: 16px; font-weight: 400; line-height: 24px;white-space: pre-wrap=
+;margin: 0 0 16px;">2) Escreva abaixo o valor que sobra (+ valor x), ou que=
+ falta (- valor x). <span style=3D"color: #d93025;" aria-label=3D"Required =
+question"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D=
+"width: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bott=
+om: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;displa=
+y: inline-block; max-width: 100%; min-width: 50%;">-124</div></div></div></=
+div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-=
+color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;">=
+<div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;fo=
+nt-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-siz=
+e: 16px; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: =
+0 0 16px;">3) Imagine que est=C3=A1 faltando dinheiro para a fam=C3=ADlia d=
+a sua hist=C3=B3ria. O que eles fariam?<span style=3D"color: #d93025;" aria=
+-label=3D"Required question"> *</span></h2></div><div style=3D"padding: 0 1=
+2px;"><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-=
+family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400=
+; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><=
+tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"Pegar empre=
+stado com parentes ou amigos." style=3D"border: solid 2px #9aa0a6; height: =
+16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: =
+8px;"></td><td style=3D"word-break: break-word;">Pegar emprestado com paren=
+tes ou amigos.</td></tr></table></div><div style=3D"margin-top: 16px;"><tab=
+le style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;f=
+ont-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-t=
+op: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"=
+false" aria-label=3D"Usar o cheque especial." style=3D"border: solid 2px #9=
+aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td style=
+=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">Usar o cheq=
+ue especial.</td></tr></table></div><div style=3D"margin-top: 16px;"><table=
+ style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;fon=
+t-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top=
+: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"fa=
+lse" aria-label=3D"Fazer um empr=C3=A9stimo no banco." style=3D"border: sol=
+id 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td>=
+<td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">Fa=
+zer um empr=C3=A9stimo no banco.</td></tr></table></div><div style=3D"margi=
+n-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,=
+Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;margi=
+n-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"true" aria-label=3D"Procurar obter renda extra." style=3D"border: solid=
+ 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div style=3D=
+"background-color: #5f6368; border: solid 5px #5f6368; border-radius: 50%; =
+margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"min-width:=
+ 8px;"></td><td style=3D"word-break: break-word;">Procurar obter renda extr=
+a.</td></tr></table></div><div style=3D"margin-top: 16px;"><table style=3D"=
+color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14=
+px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; tab=
+le-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-=
+label=3D"Other: " style=3D"border: solid 2px #9aa0a6; height: 16px; width: =
+16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><t=
+d style=3D"white-space: nowrap;">Other:&nbsp;&nbsp;</td><td style=3D"word-b=
+reak: break-word;border-bottom: 1px dotted rgba(0,0,0,0.38);width: 99%;"></=
+td></tr></table></div></div></div></form></div><table align=3D"center" cell=
+padding=3D"0" cellspacing=3D"0" style=3D"max-width: 672px; min-width: 154px=
+;" width=3D"100%" role=3D"presentation"><tbody><tr height=3D"24px"><td></td=
+></tr><tr><td><a href=3D"https://docs.google.com/forms?usp=3Dmail_form_link=
+" style=3D"color: #424242; font-size: 13px;">Create your own Google Form</a=
+></td></tr></tbody></table></div></body></html>
+--000000000000e46a3c05af61bac8--

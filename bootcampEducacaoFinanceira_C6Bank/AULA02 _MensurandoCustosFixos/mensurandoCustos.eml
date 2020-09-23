@@ -1,0 +1,291 @@
+Delivered-To: lucas.arifa100@gmail.com
+Received: by 2002:ac0:e352:0:0:0:0:0 with SMTP id g18csp2073546imn;
+        Sun, 13 Sep 2020 13:28:33 -0700 (PDT)
+X-Received: by 2002:a25:cbd1:: with SMTP id b200mr5547404ybg.293.1600028913769;
+        Sun, 13 Sep 2020 13:28:33 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1600028913; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zwWmGEt2Qi9APF14Q/BuYyiZM+HFmMMxBaKDKALHPPtuHd+ybZ2yj/8iEMNPeVC5ag
+         qx0w6i0YNIQ6+3zcJjTCF1L6c+XQ3HhkuEf7SthQFAP8wIY3BWzxURiwOHP6XKt0YtN3
+         JrpNbFIMDJKKNnh/a7PJDhC+IKUBc1jCW4xW2ucAZzqvE+6T3pQyIj+DZBSLtu9T7JhN
+         5eTpCZK+NzUUsnsLXzDOQR9+sdUtNjl78RwIfvrsdN3dmzRYHj8tW3qA/E2FEaepi2dm
+         /AAy/S9qN/VELwLV/+rZ1nPXgxCfw6nA92+L/WBWCSvN/zEgx6/HSKbv2oN7KSpaGRHs
+         XXAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:mime-version:dkim-signature;
+        bh=jpP9mQnMydMaa161yzTWNwYPjrvjFpj/afQDoHG5DoY=;
+        b=frQD9ezW6gP0+rFSwZxOXebbH8zt1GyzcSA3kWMB+3tphyRMnuIqKUXGT8g/8q1qcX
+         09nCxJ8tQTmi+JOorN1rZz92tSY4nk7nhVk49kB0nGNRsT6p7Gao0KWrX3VoO45cwDSE
+         o2o9q4wrZwqBsk/krQs1WVW1xdG4M5RLKEIopJM/R8e8iGqT2IAUWUsgqgEe7mKgP0hA
+         UMJ+kA+YeylvWg0in30tzfxezvbIFyIxDT3a59frG1tLLoXjKW+a04pnEtBld+sqz+TI
+         xSvXcSzrsqtbhPh8bW9ENn7OeZQQcuKyKgE5eMRpRb5YuXdMiTXo/BIYfGXcCRA3kbEb
+         bRpQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b="W/BLt3V9";
+       spf=pass (google.com: domain of 38ybexxykag4radye-dqoqubfe-zadqbxksaasxq.oay@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=38YBeXxYKAG4RadYe-dQOQUbfe-ZadQbXkSaaSXQ.OaY@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <38YBeXxYKAG4RadYe-dQOQUbfe-ZadQbXkSaaSXQ.OaY@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id s13sor2084221ybp.145.2020.09.13.13.28.33
+        for <Lucas.arifa100@gmail.com>
+        (Google Transport Security);
+        Sun, 13 Sep 2020 13:28:33 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 38ybexxykag4radye-dqoqubfe-zadqbxksaasxq.oay@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b="W/BLt3V9";
+       spf=pass (google.com: domain of 38ybexxykag4radye-dqoqubfe-zadqbxksaasxq.oay@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=38YBeXxYKAG4RadYe-dQOQUbfe-ZadQbXkSaaSXQ.OaY@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:message-id:date:subject:from:to;
+        bh=jpP9mQnMydMaa161yzTWNwYPjrvjFpj/afQDoHG5DoY=;
+        b=W/BLt3V9a87KC0wRCoAIo2LWULDEUo4PWoi0r/XbuvbRdyYY/jDwhxe5s72hqtL5ca
+         QPgeNFmJH/b2yqdm6HzRX13NapFO14XrTp/SC1s7LmhWEg/19VdwljXv4TlOPbxqyd8e
+         aL7lFG20VEncqoFj5e2cfQ6dhzEOQfzERYfTCvRlDmrYmrJ2byfRxGYPRWj2PoOMOn58
+         SBaDpIW9Oz+gfgheoBZQWOInP2ueb1pLq0r0vSbpS7E2/3MxWkMQ75TDL4SY0SL/Z/mW
+         kiSW/Tf28D7s8O6IGcbUqXYIzXYege9MF/me1/330pkDkenumiCboFs35o/t/xB+BFvT
+         ptkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:message-id:date:subject:from:to;
+        bh=jpP9mQnMydMaa161yzTWNwYPjrvjFpj/afQDoHG5DoY=;
+        b=iMXucYZMoqrX/aOeRAw66/uryaMQbRaKN/ovPWWXG+pfSioETF4C7xgzuFMylY/nrx
+         SiGLuea4vGTUzySIKrU6EfbW+wrCLCF5XW5hU+ccVIFbuEygalObI8naF3z44PWaY9K3
+         QJX35qYnhqgLHYj2aI4+ViCFAonKIAQUKi6vk4sJ59vSyrGMKi8CcOCgz2nHcz2Hk9KV
+         01JrQXcbG0vN26fvGmVbQWcsi8u+vHXgq8EBqX96tY7effPi93qvSKRMXHseYIQn6Mhr
+         WEmbkghNERkzzaZppTJRDzxGgk/ZKOEqJslV4+lB2cZviPImVCKyWCabYTZ3gLk+va+3
+         uzLw==
+X-Gm-Message-State: AOAM533OpQtDsiVxF/Frbm9i4/lEOtaXTtI8X5YI+5RAdlPykLTXseM3
+	ijr2egJiPA9aGfnefr4hhKT2cWpyvOy80LsuNISWiw==
+X-Google-Smtp-Source: ABdhPJxIq80VEYbRjYTMgFPqZAX6zT+jIg6XCFZe5VmWk/V7Tt0M07I465Sp02fm7C2Bz/u6SJ5bm+B2hTd1yl9uwzrbqA==
+MIME-Version: 1.0
+X-Received: by 2002:a25:33c4:: with SMTP id z187mr3406803ybz.27.1600028913076;
+ Sun, 13 Sep 2020 13:28:33 -0700 (PDT)
+Message-ID: <000000000000fe8ee705af37c221@google.com>
+Date: Sun, 13 Sep 2020 20:28:33 +0000
+Subject: =?UTF-8?Q?Atividade_do_dia_=2D_Moradia=2C_alimenta=C3=A7=C3=A3o=2C_transport?=
+	=?UTF-8?Q?e_e_comunica=C3=A7=C3=A3o=2E?=
+From: Google Forms <forms-receipts-noreply@google.com>
+To: Lucas.arifa100@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000fe8ed805af37c21e"
+
+--000000000000fe8ed805af37c21e
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+R29vZ2xlIEZvcm1zDQoNCg0KVGhhbmtzIGZvciBmaWxsaW5nIG91dCBBdGl2aWRhZGUgZG8gZGlh
+IC0gTW9yYWRpYSwgYWxpbWVudGHDp8OjbywgdHJhbnNwb3J0ZSAgDQplIGNvbXVuaWNhw6fDo28u
+DQpIZXJlJ3Mgd2hhdCB3ZSBnb3QgZnJvbSB5b3U6DQoNCg0KQXRpdmlkYWRlIGRvIGRpYSAtIE1v
+cmFkaWEsIGFsaW1lbnRhw6fDo28sIHRyYW5zcG9ydGUgZSBjb211bmljYcOnw6NvLg0KDQpQZW5z
+ZSBuYSBmYW3DrWxpYSBxdWUgdm9jw6ogY3Jpb3UgZSBvYnNlcnZlIGNvbSBhdGVuw6fDo28gdG9k
+b3Mgb3MgaXRlbnMgZGUgIA0KY2FkYSB1bSBkb3Mgc2VndWludGVzIGdydXBvczogbW9yYWRpYSwg
+YWxpbWVudGHDp8OjbywgdHJhbnNwb3J0ZSwgIA0KY29tdW5pY2HDp8Ojby4gRXNwZWNpZmlxdWUg
+b3MgZ2FzdG9zIGRhIGZhbcOtbGlhIGNvbSBjYWRhIHVtIGRvcyBpdGVucywgIA0KY29uZm9ybWUg
+b3MgY2FydMO1ZXMgZGlzcG9uaWJpbGl6YWRvcy4gT2JzOiBTZSB2b2PDqiBxdWlzZXIgcmVjZWJl
+ciB1bWEgY8OzcGlhICANCmRhcyBzdWFzIHJlc3Bvc3RhcyBwb3IgZS1tYWlsLCBhbyBmaW5hbCBk
+byBxdWVzdGlvbsOhcmlvIHNlbGVjaW9uZSAiZW52aWUtbWUgIA0KdW1hIGPDs3BpYSBkYXMgbWlu
+aGFzIHJlc3Bvc3Rhcy4iDQoNCg0KRW1haWwgYWRkcmVzcyAqDQoNCg0KTHVjYXMuYXJpZmExMDBA
+Z21haWwuY29tDQoNCg0KQ1BGOiAoQXBlbmFzIG7Dum1lcm9zKSAqDQoNCg0KMzI3NDQ0MDU4MjUN
+Cg0KDQoxLiBRdWFudG8gZXNzYSBmYW3DrWxpYSBnYXN0YSBjb20gY2FkYSB1bSBkb3MgaXRlbnMg
+ZG8gZ3J1cG8gTW9yYWRpYT8gKg0KDQoNCkdydXBvIE1vcmFkaWEgLSBnYXN0b3MgbWVuc2FpcyAt
+QWx1Z3VlbCBSJCAxLjIwMC4wMCAtQ29uZG9tw61uaW8gUiQgODAwLjAwICANCi1JUFRVIFIkIDEu
+MjAwLjAwIC1GYXhpbmEgUiQgMTUwLjAwIC1MdXogUiQgODAuMDAgLcOBZ3VhIFIkIDgwLjAwIC1H
+w6FzIFIkICANCjE0MC4wMCBUT1RBTCA9IFIkIDIsNDUwDQoNCg0KMi4gRSBjb20gdHJhbnNwb3J0
+ZT8gKEltcG9ydGFudGU6IFNlIGVsZXMgdMOqbSBjYXJybyBvdSBtb3RvLCBuw6NvIHNlIGVzcXVl
+w6dhICANCnF1ZSBkZXZlbSBub3Mgc2V1cyBjdXN0b3MgdW1hIHByb3Zpc8OjbyBtZW5zYWwgcGFy
+YSBtYW51dGVuw6fDo28sIG9rPykgKg0KDQoNCkdydXBvIFRyYW5zcG9ydGUgLSBnYXN0b3MgbWVu
+c2FpcyAtIElQVkEsIGxpY2VuYy4gUiQgMS4wMDAgLVNlZ3VybyBSJCAxLjAwMCAgDQotQ29tYnVz
+dMOtdmVsIFIkIDMwMC4wMCAtTWFudXRlbsOnw6NvIFIkIDE1MC4wMCAtRXN0YWNpb25hbWVudG8g
+UiQgMTAwLjAwICANCi1UcmFuc3BvcnRlIFDDumJsaWNvIFIkIDgwLjAwIC1VYmVyLCBUYXhpIFIk
+IDUwLjAwIC1UcmFuc3BvcnRlIEVzY29sYXIgUiQgIA0KMTgwLjAwIFRPVEFMID1SJCAyLDg2MA0K
+DQoNCjMuIFF1YWwgbyBnYXN0byBtZW5zYWwgZGEgZmFtw61saWEgY29tIGNvbXVuaWNhw6fDo28/
+IChFeGVtcGxvOiBJbnRlcm5ldCwgIA0KY2VsdWxhci4uLikgKg0KDQoNCkdydXBvIENvbXVuaWNh
+w6fDo28gLSBnYXN0b3MgbWVuc2FpcyAtIEludGVybmV0LCBUViBhIGNhYm8sIHRlbGVmb25lIGZp
+eG8uIFIkICANCjMwMC4wMCAtRGFkb3MgTcOzdmVpcyBSJCAzMC4wMCAtTmV0ZmxpeCwgR2xvYm8g
+UGxheSBlIEFtYXpvbiBQcmltZS4gUiQgIA0KMTAwLjAwIC1NYW51dGVuw6fDo28gUiQgMTUwLjAw
+IC1EZW1haXMgZ2FzdG9zICggVlBOLCBDbG91ZCBTdG9yZSkgUiQgMTAwLjAwICANClRPVEFMID1S
+JCA2ODAuMDANCg0KDQo0LiBRdWFudG8gYSBmYW3DrWxpYSBnYXN0YSBjb20gYWxpbWVudGHDp8Oj
+bz8gU2Vyw6EgcXVlIHZvY8OqIGxlbWJyb3UgZG9zIGdhc3RvcyAgDQpjb20gb3MgbGFuY2hpbmhv
+cyBxdWUgZWxlcyB0b21hbSBuYSBydWEgY29tIGNlcnRhIGZyZXF1w6puY2lhPyAqDQoNCg0KR3J1
+cG8gQWxpbWVudGHDp8OjbyAtIGdhc3RvcyBtZW5zYWlzIC0gQWxtb8OnbyBlIEphbnRhLiBSJCAx
+MDAwLjAwIFRPVEFMID1SJCAgDQoxMDAwLjAwDQoNCg0KNS4gQWdvcmEgc29tZSB0dWRvIGUgY29s
+b3F1ZSBhcXVpIG8gdmFsb3IgZmluYWwgZGVzc2FzIHF1YXRybyBjYXRlZ29yaWFzICANCmp1bnRh
+cy4gKg0KDQoNCjY5OTANCg0KDQpDcmVhdGUgeW91ciBvd24gR29vZ2xlIEZvcm0NCg0KDQo=
+--000000000000fe8ed805af37c21e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style nonce=3D"Y5ii5cnaFLZdBbqYsfEpkQ">@import url(https://fon=
+ts.googleapis.com/css?family=3DGoogle+Sans:400,500|Roboto:300,400,400i,500,=
+700&subset=3Dlatin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-e=
+xt);</style><style nonce=3D"Y5ii5cnaFLZdBbqYsfEpkQ">[class=3D"x_body-conten=
+t-wrapper"] * {white-space: normal !important;}</style></head><body dir=3D"=
+ltr" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;text-align: start; wo=
+rd-wrap: break-word; margin: 0; padding: 0; height: 100%; width: 100%;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-co=
+lor:rgb(255,251,0);" width=3D"100%" role=3D"presentation"><tbody><tr height=
+=3D"64px"><td style=3D"padding: 0 24px;"><img alt=3D"Google Forms" height=
+=3D"26px" style=3D"display: inline-block; margin: 0; vertical-align: middle=
+;" width=3D"143px" src=3D"https://www.gstatic.com/docs/forms/google_forms_l=
+ogo_lockup_black_2x.png"></td></tr></tbody></table><div class=3D"body-conte=
+nt-wrapper" style=3D"padding: 12px; background-color: rgb(246,246,246);"><d=
+iv style=3D"margin: 0 auto; max-width: 640px; min-width: 154px;"><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;padding: 20px;"><h1 style=3D"color: =
+#202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-seri=
+f;font-size: 20px; font-weight: 400; line-height: 28px;margin: 0 0 12px;">T=
+hanks for filling out <a href=3D"https://docs.google.com/forms/d/e/1FAIpQLS=
+d9q_HgPfLEWHhPnM_qTl-KS7MtVo56QZjVrWgWzkyEUmn8Ag/viewform?usp=3Dmail_form_l=
+ink" target=3D"_blank" style=3D"white-space: pre-wrap;">Atividade do dia - =
+Moradia, alimenta=C3=A7=C3=A3o, transporte e comunica=C3=A7=C3=A3o.</a></h1=
+>Here's what we got from you:</div><div style=3D"border-bottom: 1px solid #=
+dadce0; border-left: 1px solid #dadce0; border-right: 1px solid #dadce0; bo=
+rder-top: 8px solid rgb(255,251,0); padding: 20px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;"><h1 dir=3D"ltr" style=3D"font-fami=
+ly: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 32px=
+; font-weight: 400; line-height: 42px;white-space: pre-wrap;margin: 0 0 12p=
+x;">Atividade do dia - Moradia, alimenta=C3=A7=C3=A3o, transporte e comunic=
+a=C3=A7=C3=A3o.</h1><div style=3D"white-space: pre-wrap;margin-bottom: 12px=
+;">Pense na fam=C3=ADlia que voc=C3=AA criou e observe com aten=C3=A7=C3=A3=
+o todos os itens de cada um dos seguintes grupos: moradia, alimenta=C3=A7=
+=C3=A3o, transporte, comunica=C3=A7=C3=A3o. Especifique os gastos da fam=C3=
+=ADlia com cada um dos itens, conforme os cart=C3=B5es disponibilizados.
+
+Obs: Se voc=C3=AA quiser receber uma c=C3=B3pia das suas respostas por e-ma=
+il, ao final do question=C3=A1rio selecione &quot;envie-me uma c=C3=B3pia d=
+as minhas respostas.&quot;</div></div><form action=3D'' method=3D'GET'><div=
+ style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #=
+fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div sty=
+le=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-famil=
+y: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px;=
+ font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px=
+;">Email address<span style=3D"color: #d93025;" aria-label=3D"Required ques=
+tion"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"wid=
+th: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: =
+1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;display: i=
+nline-block; max-width: 100%; min-width: 50%;">Lucas.arifa100@gmail.com</di=
+v></div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px =
+12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin=
+-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"c=
+olor: #202124;font-family: &#39;Google Sans&#39;,Roboto,Helvetica,Arial,san=
+s-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: p=
+re-wrap;margin: 0 0 16px;">CPF: (Apenas n=C3=BAmeros)<span style=3D"color: =
+#d93025;" aria-label=3D"Required question"> *</span></h2></div><div style=
+=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=
+=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin=
+: 12px 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-=
+width: 50%;">32744405825</div></div></div></div><div style=3D"border: 1px s=
+olid #dadce0; padding: 20px 12px;background-color: #fff; border-radius: 8px=
+; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"=
+><h2 dir=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39=
+;,Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line=
+-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">1. Quanto essa fam=
+=C3=ADlia gasta com cada um dos itens do grupo Moradia?<span style=3D"color=
+: #d93025;" aria-label=3D"Required question"> *</span></h2></div><div style=
+=3D"padding: 0 12px;"><div dir=3D"auto" style=3D"white-space: pre-wrap;bord=
+er-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px=
+;width: 100%;">Grupo Moradia - gastos mensais=20
+
+-Aluguel
+ R$ 1.200.00=20
+-Condom=C3=ADnio=20
+R$ 800.00=20
+-IPTU
+R$ 1.200.00
+-Faxina
+R$ 150.00
+-Luz=20
+R$ 80.00
+-=C3=81gua
+R$ 80.00
+-G=C3=A1s
+R$ 140.00
+
+TOTAL =3D R$ 2,450</div></div></div><div style=3D"border: 1px solid #dadce0=
+; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-bot=
+tom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"=
+auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Hel=
+vetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24p=
+x;white-space: pre-wrap;margin: 0 0 16px;">2. E com transporte? (Importante=
+: Se eles t=C3=AAm carro ou moto, n=C3=A3o se esque=C3=A7a que devem nos se=
+us custos uma provis=C3=A3o mensal para manuten=C3=A7=C3=A3o, ok?)<span sty=
+le=3D"color: #d93025;" aria-label=3D"Required question"> *</span></h2></div=
+><div style=3D"padding: 0 12px;"><div dir=3D"auto" style=3D"white-space: pr=
+e-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-h=
+eight: 20px;width: 100%;">Grupo Transporte - gastos mensais=20
+
+- IPVA, licenc.=20
+ R$ 1.000
+-Seguro=20
+R$ 1.000=20
+-Combust=C3=ADvel=20
+R$ 300.00
+-Manuten=C3=A7=C3=A3o
+R$ 150.00
+-Estacionamento
+R$ 100.00
+-Transporte P=C3=BAblico
+R$ 80.00
+-Uber, Taxi
+R$ 50.00
+-Transporte Escolar
+R$ 180.00
+
+TOTAL =3DR$  2,860</div></div></div><div style=3D"border: 1px solid #dadce0=
+; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-bot=
+tom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"=
+auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,Hel=
+vetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24p=
+x;white-space: pre-wrap;margin: 0 0 16px;">3. Qual o gasto mensal da fam=C3=
+=ADlia com comunica=C3=A7=C3=A3o? (Exemplo: Internet, celular...)<span styl=
+e=3D"color: #d93025;" aria-label=3D"Required question"> *</span></h2></div>=
+<div style=3D"padding: 0 12px;"><div dir=3D"auto" style=3D"white-space: pre=
+-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-he=
+ight: 20px;width: 100%;">Grupo Comunica=C3=A7=C3=A3o - gastos mensais=20
+
+- Internet, TV a cabo, telefone fixo.
+ R$ 300.00
+-Dados M=C3=B3veis=20
+R$ 30.00
+-Netflix, Globo Play e Amazon Prime.=20
+R$ 100.00
+-Manuten=C3=A7=C3=A3o
+R$ 150.00
+-Demais gastos ( VPN, Cloud Store)
+R$ 100.00
+=20
+TOTAL =3DR$  680.00</div></div></div><div style=3D"border: 1px solid #dadce=
+0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-bo=
+ttom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D=
+"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto,He=
+lvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24=
+px;white-space: pre-wrap;margin: 0 0 16px;">4. Quanto a fam=C3=ADlia gasta =
+com alimenta=C3=A7=C3=A3o? Ser=C3=A1 que voc=C3=AA lembrou dos gastos com o=
+s lanchinhos que eles tomam na rua com certa frequ=C3=AAncia?<span style=3D=
+"color: #d93025;" aria-label=3D"Required question"> *</span></h2></div><div=
+ style=3D"padding: 0 12px;"><div dir=3D"auto" style=3D"white-space: pre-wra=
+p;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height=
+: 20px;width: 100%;">Grupo Alimenta=C3=A7=C3=A3o - gastos mensais=20
+
+- Almo=C3=A7o e Janta.
+ R$ 1000.00
+=20
+TOTAL =3DR$  1000.00</div></div></div><div style=3D"border: 1px solid #dadc=
+e0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-b=
+ottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=
+=3D"auto" style=3D"color: #202124;font-family: &#39;Google Sans&#39;,Roboto=
+,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height:=
+ 24px;white-space: pre-wrap;margin: 0 0 16px;">5. Agora some tudo e coloque=
+ aqui o valor final dessas quatro categorias juntas.<span style=3D"color: #=
+d93025;" aria-label=3D"Required question"> *</span></h2></div><div style=3D=
+"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"w=
+hite-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12p=
+x 0 8px; min-height: 20px;display: inline-block; max-width: 100%; min-width=
+: 50%;">6990</div></div></div></div></form></div><table align=3D"center" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"max-width: 672px; min-width: 154=
+px;" width=3D"100%" role=3D"presentation"><tbody><tr height=3D"24px"><td></=
+td></tr><tr><td><a href=3D"https://docs.google.com/forms?usp=3Dmail_form_li=
+nk" style=3D"color: #424242; font-size: 13px;">Create your own Google Form<=
+/a></td></tr></tbody></table></div></body></html>
+--000000000000fe8ed805af37c21e--
