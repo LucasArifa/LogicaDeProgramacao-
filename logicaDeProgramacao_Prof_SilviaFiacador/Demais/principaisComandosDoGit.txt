@@ -1,0 +1,31 @@
+	Documentação Primeiros Comandos
+
+git init -
+
+Inicializar um repositório git. Ao executar esse comando, git cria um subdiretório .git que contém os arquivos necessários do novo repositório.
+	
+git clone -
+
+Copia um repositório remoto na máquina local.
+
+git add -
+
+Este comando possui diversas funções, como adicionar um arquivo em uma lista de arquivos a ser monitorado. Também funciona para salvar o estado de um arquivo que está sendo monitorado.
+ 
+git status -
+
+Exibe o status dos arquivos no repositório (não monitorados, modificados e não salvos, salvos e prontos para commit, etc).
+git diff
+ O comando git diff, sem parâmetros, permite visualizar as alterações ainda não selecionadas para o commit.
+	
+git commit -
+Cria um ponto de referência com o estado atual de todos os arquivos
+ 
+git show -
+É um utilitário de linha de comando usado para visualizar detalhes expandidos em objetos Git, como blobs, árvores, tags e commits.
+
+git log - 
+Com o comando git log, você pode visualizar o que vem sendo feito em uma determinada branch ou avaliar as alterações de um arquivo em especial.
+
+git config -
+É usado para armazenar uma configuração por usuário como valores de fallback para o arquivo.

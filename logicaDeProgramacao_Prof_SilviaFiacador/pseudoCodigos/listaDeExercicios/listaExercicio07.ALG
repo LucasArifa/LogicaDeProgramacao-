@@ -1,0 +1,18 @@
+Algoritmo "Primeira Aula - VisualG"
+
+Var
+
+TEMPERATURA : CARACTERE
+
+IniciO
+
+      ESCREVA ("INFORME A TEMPERATURA:")
+       LEIA (TEMPERATURA)
+SE (TEMPERATURA <= 25) ENTAO
+      ESCREVA (TEMPERATURA)
+      ESCREVA (" GRAUS " + "É " + "AGRADAVEL ")
+SENAO
+      ESCREVA (TEMPERATURA)
+      ESCREVA (" GRAUS " + "É " + "MUITO " + "QUENTE!")
+FIMSE
+Fimalgoritmo
