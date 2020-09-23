@@ -1,9 +1,0 @@
-Enquanto Proa Roboot em pé
-Se Proa Robot == Insight
-
-Luz Ascende
-
-Senão
-
-Luz Desliga
-
