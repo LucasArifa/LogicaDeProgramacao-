@@ -8,7 +8,6 @@ SELECT DATABASE();
 #DROP DATABASE bd_Faculdade;
 
 #CRIANDO ENTIDADES (TABLES)
-
  CREATE TABLE tbl_Departamento(
  ID_Departamento INT PRIMARY KEY AUTO_INCREMENT,
  Nome_departamento VARCHAR(30) NOT NULL
