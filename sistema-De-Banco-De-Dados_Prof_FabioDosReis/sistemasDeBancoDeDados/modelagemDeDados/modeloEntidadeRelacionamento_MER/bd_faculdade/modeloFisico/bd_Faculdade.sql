@@ -3,6 +3,7 @@ CREATE DATABASE bd_Faculdade;
 SHOW DATABASES;
 USE bd_Faculdade;
 SELECT DATABASE();
+SHOW TABLES;
 
 #DELETA O bd_Faculdade;
 #DROP DATABASE bd_Faculdade;
@@ -141,3 +142,15 @@ CEP VARCHAR(8) NOT NULL,
 CONSTRAINT fk_RA_End FOREIGN KEY(RA) REFERENCES tbl_Aluno (RA)
 );
 DESCRIBE tbl_Endereco_Aluno;
+
+
+
+#INSERINDO REGISTROS (DADOS)
+#INSERT INTO tbl_Aluno(Nome_Aluno,Sobrenome_Aluno,CPF,ID_Turma,ID_Curso,Email,Telefone)
+#VALUES ('Lucas', 'Arifa ', 26585496578,2,3,'lucas.arifa100@gmail.com',11965854465);
+
+#INSERT INTO tbl_Aluno(Nome_Aluno, Sobrenome_Aluno,CPF, ID_Turma, ID_Curso, Email, Telefone)
+#VALUES ('Caio', 'Lyncoln', 26585496577,2,4,'caio.lyncon@gmail.com',11965854462);
+
+#INSERT INTO tbl_Aluno(Nome_Aluno, Sobrenome_Aluno,CPF, ID_Turma, ID_Curso, Email, Telefone)
+#VALUES ('Marwan', 'Nabil',26585492575,2,2,'Marwan.nabil@gmail.com',11965854425);
