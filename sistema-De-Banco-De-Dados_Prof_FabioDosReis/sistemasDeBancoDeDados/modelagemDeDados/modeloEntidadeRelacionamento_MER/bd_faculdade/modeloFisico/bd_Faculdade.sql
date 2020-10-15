@@ -2,9 +2,10 @@
 #DROP DATABASE db_faculdade;
 SHOW DATABASES;
 SHOW TABLES;
+USE db_Faculdade;
+SELECT DATABASE();
 
-USE db_faculdade;
- 
+#Criando Tabelas
  CREATE TABLE tbl_departamento(
  ID_departamento tinyint PRIMARY KEY AUTO_INCREMENT,
  nome_departamento VARCHAR(35) NOT NULL
