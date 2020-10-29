@@ -138,8 +138,6 @@ ID_disciplina tinyint NOT NULL,
 CONSTRAINT fk_ID_disciplina2 FOREIGN KEY (ID_disciplina) REFERENCES tbl_disciplina (ID_disciplina) ON DELETE CASCADE
 );
 
-# INSERÇÃO DE DADOS 
-
 insert into tbl_departamento (nome_departamento)
 values
 ('Setor de Ciências Exatas'),
@@ -304,8 +302,6 @@ VALUES
 (109, 3, ' Lorena', 23, '', '05851300');
 select * from tbl_endereco_aluno;
 
-#Fazendo consultas simples
-
 select nome_aluno, sobrenome_aluno 
 from tbl_aluno;
 
@@ -314,8 +310,6 @@ from tbl_disciplina;
 
 select concat (nome_professor, sobrenome_professor) AS Professor
 from tbl_professor;
-
-# efetuando consultar com ORDENAÇÃO com ORDER BY
 
 select nome_curso 
 from tbl_curso
@@ -331,8 +325,6 @@ order by nome_aluno asc;
 select nome_aluno, RA
 from tbl_aluno
 order by RA desc;
-
-# filtrar consulta com o cláusula WHERE
 
 select nome_curso
 from tbl_curso
@@ -351,8 +343,6 @@ select nome_aluno, ID_turma, email
 from tbl_aluno
 where ID_turma = 1;
 
-# criando nomes alternativos (aliases) com clausula AS 
-
 select * from tbl_curso;
 
 select nome_curso AS cursos
@@ -362,8 +352,6 @@ where ID_curso > 6;
 select nome_aluno AS Nome,
 sobrenome_aluno AS Sobrenome
 from tbl_aluno AS Alunos;
-
-#OPERADORES LOGICOS - AND OR NOT
 
 select * from tbl_disciplina;
 
@@ -376,8 +364,6 @@ where ID_disciplina > 7 AND NOT ID_departamento =3;
 select nome_disciplina, carga_horaria, ID_departamento FROM tbl_disciplina
 where ID_disciplina > 8 OR ID_departamento =1;
 
-# exemplo a parte com WHERE, ORDER BY, AND, AS 
-
 select * from tbl_turma;
 
 select data_inicio AS Começo, 
@@ -386,26 +372,18 @@ periodo AS 'Periodo do curso'
 FROM tbl_turma AS turmas
 where data_inicio >20210206 AND data_fim > 20210510
 order by data_inicio desc;
-
-# funções de AGREGAÇÃO
 select count(distinct ID_turma) from tbl_turma;
 
 select count(*) AS 'Total de professores' from tbl_professor;
 
-# como usar a clausua BETWEEN para filtrar valores
-
 select * from tbl_aluno
 where RA between 105 and 108;
-
-# filtrar consultas com cláusula LIKE e NOT LIKE
 
 select * from tbl_professor
 where nome_professor LIKE 'M%';
 
 select * from tbl_professor
 where nome_professor NOT LIKE 'S%';
-
-# comandos INNER JOIN
 
 select * from tbl_aluno
  INNER JOIN tbl_turma
@@ -423,8 +401,6 @@ JOIN tbl_tipo_logradouro AS L
  on E.ID_endereco_aluno = L.ID_endereco_aluno
 JOIN tbl_telefone_aluno AS T
  on A.RA = T.RA;
- 
- #Create Procedure 
  
 create procedure verInicio (varCurso varchar(35))
 select concat('O curso de ', nome_curso, ' Inicia na data ', data_inicio)
