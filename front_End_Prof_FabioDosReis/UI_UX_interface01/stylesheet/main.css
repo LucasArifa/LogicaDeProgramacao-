@@ -1,29 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
 
-body 
-{
-padding: 0%;
-margin: 0%;
-background-color: #2ba8d9;
+body, ul, li, p {
+margin: 0px;
+padding: 0px;
+list-style: none;
+font-size: 1.2rem;
+font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
-header{
-padding: 10px;
-margin: 5px;
+body{
+    background-color: #2ba8d9;
 }
-.flex-container{
-display: flex;
-flex-direction: column;
-color: white;
+a {
+    text-decoration: none;
+    color: white;
 }
-.flex-item{
-margin:5px;
-padding: 5px;
-text-align: center;
-align-self: flex-end;
-width: 200px;
-border: solid 0.5px black;
-border-radius: 5px;
-box-shadow: 1px 1px black;
-background-color: #ff675a;
-font-family: 'Montserrat', sans-serif;
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu li {
+    text-align: center;
+    margin: 5px 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 1px black;
+    box-shadow: 1px 1px white;
+    background-color: #ff675a;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+}
+
+#main {
+    padding: 10px;
+    background-color: #ff675a;
 }
