@@ -1,29 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
 
-body 
-{
-padding: 0%;
-margin: 0%;
+body, ul, li {
+padding: 0px;
+margin: 0px;
+}
+body {
 background-color: #2ba8d9;
-}
-header{
-padding: 10px;
-margin: 5px;
-}
-.flex-container{
-display: flex;
-flex-direction: column;
-color: white;
-}
-.flex-item{
-margin:5px;
-padding: 5px;
-text-align: center;
-align-self: flex-end;
-width: 200px;
-border: solid 0.5px black;
-border-radius: 5px;
-box-shadow: 1px 1px black;
 background-color: #ff675a;
 font-family: 'Montserrat', sans-serif;
+}
+.ulHeader {
+display: flex;
+flex-wrap: nowrap;
 }
